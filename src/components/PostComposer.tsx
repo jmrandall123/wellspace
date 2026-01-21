@@ -56,7 +56,7 @@ export function PostComposer({ onPost }: PostComposerProps) {
             onChange={(e) => setContent(e.target.value)}
             onFocus={() => setIsExpanded(true)}
             placeholder="Share your thoughts..."
-            className="w-full resize-none border-0 focus:ring-0 text-stone-800 placeholder-stone-400 text-base min-h-[60px]"
+            className="w-full resize-none border-0 focus:ring-0 focus:outline-none text-stone-800 placeholder-stone-400 text-base min-h-[60px]"
             rows={isExpanded ? 6 : 2}
             maxLength={10000}
           />
