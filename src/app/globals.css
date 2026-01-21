@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Muted, calm color palette */
+  --color-primary: #4a5568;
+  --color-accent: #718096;
+  --color-background: #fafaf9;
+  --color-surface: #ffffff;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --color-border: #e7e5e4;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* E-reader style typography for post content */
+.prose-reader {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+
+.prose-reader h1,
+.prose-reader h2,
+.prose-reader h3 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-reader p {
+  margin-bottom: 1.25em;
+}
+
+.prose-reader strong {
+  font-weight: 600;
+}
+
+.prose-reader em {
+  font-style: italic;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid #4a5568;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.transition-gentle {
+  transition: all 0.2s ease-out;
 }
